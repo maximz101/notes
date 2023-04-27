@@ -1,0 +1,3 @@
+= Notes
+
+This repo is the host of notes about diverse tech stuff, mostly quick notes, how-tos, links...etc.
