@@ -1,0 +1,16 @@
+= Java Multithreading
+
+== happens-before guarantees
+Guarantees to preserve reading and writing semantics and java visibility guarantees by limiting instruction re-ordering optimizations.
+
+=== _synchronized_
+Writes to variables that happens BEFORE the *_synchronized_* block will remain BEFORE the *_synchronized_* block : instructions will not be re-ordered and moved after the sync block.
+
+Reads that happen AFTER the exit of a *_synchronized_* block will remain AFTER the *_synchronized_* block exit, instructions will not be moved to before the sync block. In other words the *_synchronized_* block happens before subsequent reads.
+
+What happens inside the *_synchronized_* block remains in the *_synchronized_* block.
+
+=== _volatile_
+Any write (to a non-volatile variables or field) that happens BEFORE writing to *_volatile_* variable will remain BEFORE writing to the volatile variable.
+
+Any read (to a non-volatile variables or field) that happens AFTER a read to a *_volatile_* variable will be guaranteed to remain AFTER that read. In other words, the read to a *_volatile_* variable will be guaranteed to happen before subsequent reads.
