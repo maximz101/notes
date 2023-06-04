@@ -14,3 +14,7 @@ What happens inside the *_synchronized_* block remains in the *_synchronized_* b
 Any write (to a non-volatile variables or field) that happens BEFORE writing to *_volatile_* variable will remain BEFORE writing to the volatile variable.
 
 Any read (to a non-volatile variables or field) that happens AFTER a read to a *_volatile_* variable will be guaranteed to remain AFTER that read. In other words, the read to a *_volatile_* variable will be guaranteed to happen before subsequent reads.
+
+
+== Spinlock
+A mechanism in which a thread wanting to acquire a lock, instead of blocking and going to a sleep state, "spins" re-trying to acquire the said lock, hence avoiding context-switches. This is useful in case of lock that are held for a brief moment. The JVM does this optimisation automatically.
