@@ -1,0 +1,44 @@
+= Jim Manico - OWASP Top Ten 2021
+
+https://youtu.be/pLsH-TT26Mo[Jim Manico - OWASP Top Ten 2021]
+
+. Broken access control
+.. principle of least privilege
+.. difficult to test in automated tools (because scanners are not aware of custom policy
+.. difficult to build, lack of framework support
+.. Best Practices
+... DO NOT hardcode roles, instead hardcode the name of the feature (ex: ARTICLE_EDIT)
+...  Build a centralized access control mechanism
+... Design access control so all requests must be authorized
+... Implement data-contextual access control
+... Deny by default
+...  Right data for AC decision
+... Apply changes in real time
+... Groups
+... Build admin screen first
+
+. Cryptography
+.. TLS everywhere
+.. No plaintext
+.. Use HSTS (HTTP Strict Transport Security)
+.. Google Tink or Libsodium for encrypting data at rest
+
+. Injection
+.. Validation is not the solution, email’s with sql injection are valid emails (ex: jim’or1’1!=@manicode.com is a valid email)
+.. Always parametrize queries
+.. XSS : Injection Cross Site Scripting
+
+. Insecure Design
+.. Security first approach
+
+. Security misconfiguration
+
+. Vulnerable/Outdated components
+
+. Identification and Authentication failures
+
+. Software and Data integrity failures
+
+. Security logging and monitoring failures
+
+. Server-side Request Forgery
