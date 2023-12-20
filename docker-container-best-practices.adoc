@@ -1,0 +1,60 @@
+= Docker Best Practices: Keeping Images Small
+
+Docker images play a crucial role in efficient containerization. Keeping them small helps reduce storage and transfer costs, as well as enhance performance. Follow these best practices to minimize the size of your Docker images:
+
+== 1. Use Minimal Base Images
+
+- Choose lightweight base images like Alpine Linux instead of full-fledged distributions.
+- Use specialized base images for specific use cases, such as `node:alpine` for Node.js applications.
+- Avoid using general-purpose images like `ubuntu` or `debian` unless necessary.
+
+== 2. Leverage Multi-Stage Builds
+
+- Utilize multi-stage builds to separate build-time dependencies from runtime dependencies.
+- Use a minimal base image for the final production stage.
+- Discard unnecessary build artifacts and intermediate layers to reduce the final image size.
+
+== 3. Minimize Installed Packages
+
+- Only install necessary packages and dependencies required for your application to function.
+- Remove temporary or unnecessary files after package installations.
+- Combine multiple package installation commands into a single RUN instruction to reduce the number of layers.
+
+== 4. Optimize Dockerfile Instructions
+
+- Combine similar Dockerfile instructions into a single instruction using `&&`.
+- Use `COPY` instead of `ADD` when copying files to avoid unnecessary extraction or download steps.
+- Use `.dockerignore` files to exclude unnecessary files and directories from the build context.
+
+== 5. Compress and Streamline Artifacts
+
+- Compress files before adding them to the image to reduce their size.
+- Minimize the number of files and directories included in the image.
+- Avoid including development or test-related artifacts that are not needed in production.
+
+== 6. Use Docker Image Layers Wisely
+
+- Understand how Docker image layers work and their impact on image size.
+- Order instructions in your Dockerfile to optimize layer caching and reusability.
+- Place instructions that change frequently at the end to prevent invalidating subsequent layers.
+
+== 7. Clean Up and Minimize Layers
+
+- Combine multiple related commands into a single layer using `RUN` instructions.
+- Clean up temporary files, caches, and unnecessary dependencies within the same layer.
+- Use multi-line and logical operators to reduce the number of layers and improve readability.
+
+== 8. Utilize Docker Image Squashing
+
+- Consider using experimental features like Docker image squashing to reduce image size.
+- Squash multiple layers into a single layer, eliminating unnecessary intermediate layers.
+
+== 9. Regularly Update Base Images
+
+- Stay updated with the latest security patches and bug fixes by regularly updating your base images.
+- Set up a process to periodically rebuild and update your Docker images.
+
+== 10. Monitor Image Size
+
+- Continuously monitor and analyze your Docker image sizes using tools like `docker history` and third-party tools.
+- Regularly evaluate and optimize image sizes to maintain efficiency.

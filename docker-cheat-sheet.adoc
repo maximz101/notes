@@ -1,0 +1,100 @@
+= Docker Cheat Sheet
+
+Docker is an open-source platform that automates the deployment and management of applications inside lightweight containers. Here are some commonly used commands and concepts to help you work with Docker.
+
+== Containers
+
+[cols="2a,2a"]
+|===
+|Command | Description
+
+| `docker create` | Creates a new container from an image.
+| `docker start` | Starts a stopped container.
+| `docker stop` | Stops a running container.
+| `docker restart` | Stops and starts a container.
+| `docker rm` | Removes a container.
+| `docker ps` | Lists running containers.
+| `docker ps -a` | Lists all containers.
+| `docker exec` | Runs a command inside a running container.
+| `docker inspect` | Returns low-level information about a container.
+| `docker logs` | Displays the logs of a container.
+| `docker cp` | Copies files between a container and the host.
+| `docker run` | Creates and starts a container in one command.
+
+|===
+
+== Images
+
+[cols="2a,2a"]
+|===
+|Command | Description
+
+| `docker build` | Builds an image from a Dockerfile.
+| `docker pull` | Downloads an image from a registry.
+| `docker push` | Uploads an image to a registry.
+| `docker images` | Lists available images.
+| `docker rmi` | Removes an image.
+| `docker tag` | Tags an image with a name.
+
+|===
+
+== Networking
+
+[cols="2a,2a"]
+|===
+|Command | Description
+
+| `docker network create` | Creates a new network.
+| `docker network connect` | Connects a container to a network.
+| `docker network disconnect` | Disconnects a container from a network.
+| `docker network ls` | Lists networks.
+| `docker network rm` | Removes a network.
+
+|===
+
+== Volumes
+
+[cols="2a,2a"]
+|===
+|Command | Description
+
+| `docker volume create` | Creates a new volume.
+| `docker volume ls` | Lists volumes.
+| `docker volume inspect` | Displays detailed information about a volume.
+| `docker volume rm` | Removes a volume.
+
+|===
+
+== Docker Compose
+
+Docker Compose is a tool for defining and running multi-container Docker applications. It uses a YAML file to configure the application's services.
+
+[cols="2a,2a"]
+|===
+|Command | Description
+
+| `docker-compose up` | Creates and starts containers.
+| `docker-compose down` | Stops and removes containers.
+| `docker-compose build` | Builds images.
+| `docker-compose ps` | Lists running containers.
+| `docker-compose logs` | Displays the logs of containers.
+| `docker-compose exec` | Runs a command inside a service container.
+| `docker-compose stop` | Stops services.
+
+|===
+
+== Miscellaneous
+
+[cols="2a,2a"]
+|===
+|Command | Description
+
+| `docker version` | Shows the Docker version information.
+| `docker info` | Displays system-wide Docker information.
+| `docker search` | Searches the Docker Hub for images.
+| `docker login` | Logs in to a Docker registry.
+| `docker logout` | Logs out from a Docker registry.
+
+|===
+
+
